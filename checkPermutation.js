@@ -44,15 +44,5 @@ const checkPermutations = (strA, strB) => {
       return false;
     }
   }
-
   return true;
-  //  if the character can be found in strA,
-  //  check the next X characters (based on the length of strA - 1) 
-  //  store current pointer;
-  //  store isvalidpermutation is true;
-  //  while current point is < current pointer + legnth of strA - 1 || isvalidpermutation is false,
-  //  if the character at current pointer cannot be found in the object, change is valid permutation to false;
-  //
-  //  at the end of the while loop, if isvalidpermutation is true, returnt rue
-  //  else continue loop through strB
-}
+
