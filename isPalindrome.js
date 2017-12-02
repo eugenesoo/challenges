@@ -22,13 +22,14 @@ const isPalindromePerm = (str) => {
   const charObj = {};
 
   for (let i = 0; i < str.length; i += 1) {
-    if (!charObj[str[i]] && str[i] !== ' ') {
-      charObj[str[i]] = 1;
+    let currentChar = str[i].toLowerCase();
+    if (!charObj[currentChar] && currentChar !== ' ') {
+      charObj[currentChar] = 1;
       oddCount += 1;
-    } else if (charObj[str[i]]){
-      charObj[str[i]] += 1;
+    } else if (charObj[currentChar]){
+      charObj[currentChar] += 1;
       charCount += 1;
-      if (charObj[str[i]] & 1) {
+      if (charObj[currentChar] & 1) {
         oddCount += 1;
         evenCount -= 1;
       } else {
