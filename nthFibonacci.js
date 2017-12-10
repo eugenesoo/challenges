@@ -8,7 +8,7 @@ const nthFibonacciRecursive = (int) => {
   return nthFibonacciRecursive(int - 1) + nthFibonacciRecursive(int - 2);
 }
 
-const nthfibonacciiterative = (int) => {
+const nthFibonacciIterative = (int) => {
   if (int === 0) {
     return 0;
   }
@@ -16,15 +16,15 @@ const nthfibonacciiterative = (int) => {
     return 1;
   }
   let n = 2;
-  let currentresult = 1;
-  let prevresult = 0;
+  let currentResult = 1;
+  let prevResult = 0;
   let temp;
   while (n <= int) {
-    temp = prevresult;
-    prevresult = currentresult;
-    currentresult += temp;
+    temp = prevResult;
+    prevResult = currentResult;
+    currentResult += temp;
     n++;
   }
-  return currentresult;
+  return currentResult;
 }
 
