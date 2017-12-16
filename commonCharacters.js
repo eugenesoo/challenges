@@ -1,7 +1,7 @@
 const commonCharacter = (str1, str2) => {
   const hash = {};
   let str = '';
-  for (let i = 0; i < str2.length; i =+ 1) {
+  for (let i = 0; i < str2.length; i += 1) {
     hash[str2[i]] = true; 
   }
   for (let i = 0; i < str1.length; i += 1) {
