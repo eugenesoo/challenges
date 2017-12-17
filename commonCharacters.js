@@ -12,5 +12,3 @@ const commonCharacter = (str1, str2) => {
   }
   return str;
 }
-
-console.log(commonCharacter('acexivou', 'aegihobu'));
