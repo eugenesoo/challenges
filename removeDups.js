@@ -47,7 +47,7 @@ List.prototype.deleteNode = function (node) {
     this.head = this.head.next;
   } else {
     let currentNode = this.head;
-    while (!currentNode) {
+    while (currentNode) {
       if (currentNode.next === node) {
         currentNode.next = currentNode.next.next;
         return;
