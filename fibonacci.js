@@ -1,25 +1,34 @@
-const fibonnaciRecursion = (n) => {
-  if (n < 2) {
-    return n;
-  }
-  return fibonnaciRecursion(n - 1) + fibonnaciRecursion(n - 2);
-}
-
 const fibonacciDynamic = (n) => {
-  const fibonacciAns = {
+  const memoize = {
     0: 0,
     1: 1,
   };
-
-  const fibonacciCalc = (n) => {
-    if (fibonacciAns[n] !== undefined) {
-      return fibonacciAns[n];
+  
+  const fibonacciInner = (n) => {
+    if (memoize[n] !== undefined) {
+      return memoize[n];
+    } else {
+      memoize[n] = fibonacciInner(n - 1) + fibonacciInner(n - 2);
+      return memoize[n];
     }
-
-    fibonacciAns[n] = fibonacciCalc(n - 1) + fibonacciCalc (n - 2);
-    return fibonacciAns[n];
   }
+  
+  return fibonacciInner(n);
+}
 
-  return fibonacciCalc(n);
-};
 
+
+
+const fibonacciBottomUp = (n) => {
+  let n2Ans = 0;
+  let n1Ans = 1;
+  
+  // iterate n - 2 times
+  for (let i = 2; i <= n; i += 1) {
+    const oldN1Ans = n1Ans;
+    n1Ans += n2Ans;
+    n2Ans = oldN1Ans;
+  }
+  
+  return n1Ans;
+}
